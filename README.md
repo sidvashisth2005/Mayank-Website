@@ -16,3 +16,11 @@ npm run dev
 ```bash
 npm run build
 ```
+
+## Deploy on Vercel
+
+Import this repository into Vercel and keep the detected framework as **Next.js**. No custom build or output-directory settings are required.
+
+- Build command: `npm run build`
+- Start command: `npm run start`
+- Node.js: 20.9 or newer
