@@ -23,7 +23,7 @@ function ProductDemo({ compact = false }: { compact?: boolean }) {
   const state = demoStates[view];
   return <div className={`product-demo ${compact ? "compact-demo" : ""}`} aria-label="Interactive sample of Kite Analytics">
     <div className="demo-rail"><strong>KITE</strong><div className="demo-nav" aria-label="Product demo views">{(Object.keys(demoStates) as Array<keyof typeof demoStates>).map((item) => <button key={item} className={view === item ? "active" : ""} onClick={() => setView(item)}>{item}</button>)}</div><span>Settings</span></div>
-    <div className="demo-workspace"><div className="demo-heading"><strong>{view}</strong><span>Last 30 days</span></div><div className="demo-content"><div className="demo-chart"><span className="eyebrow">{state.label}</span><div className="bars" aria-label={`${state.label}: ${state.value}`}>{state.bars.map((height, index) => <i key={`${view}-${index}`} style={{ height: `${height}%` }} />)}</div></div><div className="demo-reading"><span className="eyebrow">Current reading</span><strong>{state.value}</strong><small>Illustrative product state</small></div></div></div>
+    <div className="demo-workspace"><div className="demo-heading"><strong>{view}</strong><span>Last 30 days</span></div><div className="demo-content"><div className="demo-chart"><span className="eyebrow">{state.label}</span><div className="bars" role="img" aria-label={`${state.label}: ${state.value}`}>{state.bars.map((height, index) => <i key={`${view}-${index}`} style={{ height: `${height}%` }} />)}</div></div><div className="demo-reading"><span className="eyebrow">Current reading</span><strong>{state.value}</strong><small>Illustrative product state</small></div></div></div>
   </div>;
 }
 
